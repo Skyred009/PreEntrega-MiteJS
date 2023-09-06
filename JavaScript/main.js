@@ -1,45 +1,42 @@
-// Declaración de array para almacenar los datos de los alumnos
-const students = [];
+// Array para almacenar los productos en el carrito
+const cart = [];
 
-// Función para capturar entrada de nombre, materia y calificaciones
-function captureData() {
-  const name = prompt('Ingrese el nombre del alumno:');
-  const subject = prompt('Ingrese la materia:');
-  
-  const grades = [];
-  for (let i = 0; i < 4; i++) {
-    const grade = parseFloat(prompt(`Ingrese la calificación ${i + 1} del alumno:`));
-    grades.push(grade);
-  }
+// Obtener elementos del DOM relacionados con el carrito y el total
+const cartList = document.getElementById("cart-list");
+const cartTotal = document.getElementById("cart-total");
 
-  students.push({ name, subject, grades });
+// Función para agregar productos al carrito
+function addToCart(product) {
+    cart.push(product);
+    renderCart();
 }
 
-// Función para calcular el promedio de calificaciones de una materia
-function calculateAverage(grades) {
-  if (grades.length === 0) {
-    return 0;
-  }
-  const totalGrades = grades.reduce((total, grade) => total + grade, 0);
-  return totalGrades / grades.length;
+// Función para actualizar y mostrar el carrito
+function renderCart() {
+    cartList.innerHTML = ""; // Limpiar la lista
+    let total = 0;
+
+    cart.forEach((product) => {
+        const cartItem = document.createElement("li");
+        cartItem.textContent = `${product.name} - $${product.price.toFixed(2)}`;
+        cartList.appendChild(cartItem);
+        total += product.price;
+    });
+
+    cartTotal.textContent = `$${total.toFixed(2)}`;
 }
 
-// Función principal que ejecuta el programa
-function main() {
-  const numStudents = parseInt(prompt('Ingrese la cantidad de alumnos:'));
+// Obtener todos los botones "Agregar al Carrito"
+const addToCartButtons = document.querySelectorAll(".add-to-cart");
 
-  for (let i = 0; i < numStudents; i++) {
-    captureData();
-  }
+// Agregar un controlador de eventos a cada botón
+addToCartButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const productId = parseInt(button.parentElement.querySelector("h2").textContent.match(/\d+/)); // Extraer el número de producto del título
+        const product = products.find((p) => p.id === productId);
 
-  for (const student of students) {
-    const average = calculateAverage(student.grades);
-    alert(`Promedio de ${student.name} en ${student.subject}: ${average.toFixed(2)}`);
-  }
-}
-
-// Llamada a la función principal para iniciar el programa
-main();
-
-  
-  
+        if (product) {
+            addToCart(product); // Agregar al carrito
+        }
+    });
+});
