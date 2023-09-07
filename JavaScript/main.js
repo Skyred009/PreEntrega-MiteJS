@@ -6,15 +6,37 @@ const products = [
       id: 1,
       name: "Producto 1",
       price: 19.99,
-      // Otras propiedades del producto
+
   },
   {
       id: 2,
       name: "Producto 2",
       price: 24.99,
-      // Otras propiedades del producto
+    
   },
-  // Agregar información de otros productos aquí
+  {
+    id: 3,
+    name: "Producto 3",
+    price: 24.99,
+  
+  },
+  {
+    id: 4,
+    name: "Producto 4",
+    price: 24.99,
+  },
+  {
+    id: 5,
+    name: "Producto 5",
+    price: 24.99,
+   },
+   {
+    id: 6,
+    name: "Producto 6",
+    price: 24.99,
+   },
+
+  
 ];
 
 
@@ -30,7 +52,7 @@ function addToCart(product) {
 
 // Función para actualizar y mostrar el carrito
 function renderCart() {
-    cartList.innerHTML = ""; // Limpiar la lista
+    cartList.innerHTML = ""; 
     let total = 0;
 
     cart.forEach((product) => {
@@ -53,7 +75,7 @@ addToCartButtons.forEach((button) => {
         const product = products.find((p) => p.id === productId);
 
         if (product) {
-            addToCart(product); // Agregar al carrito
+            addToCart(product); 
         }
     });
 });
