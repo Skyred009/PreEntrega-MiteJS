@@ -1,6 +1,23 @@
 // Array para almacenar los productos en el carrito
 const cart = [];
 
+const products = [
+  {
+      id: 1,
+      name: "Producto 1",
+      price: 19.99,
+      // Otras propiedades del producto
+  },
+  {
+      id: 2,
+      name: "Producto 2",
+      price: 24.99,
+      // Otras propiedades del producto
+  },
+  // Agregar información de otros productos aquí
+];
+
+
 // Obtener elementos del DOM relacionados con el carrito y el total
 const cartList = document.getElementById("cart-list");
 const cartTotal = document.getElementById("cart-total");
