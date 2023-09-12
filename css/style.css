@@ -10,7 +10,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    text-align: center; /* Centra todo el contenido en el medio */
+    text-align: center; 
 }
 
 h1 {
@@ -20,13 +20,12 @@ h1 {
 
 /* Estilos de los productos */
 .product {
-    display: inline-block; /* Permite que los productos estén en línea */
-    width: 200px; /* Ancho fijo para cada producto */
-    margin: 10px; /* Espacio entre los productos */
+    display: inline-block;
+    width: 200px; 
+    margin: 10px; 
     padding: 10px;
     background-color: #fff;
-    border: 1px solid #ddd; /* Borde alrededor de cada producto */
-    text-align: center;
+    border: 1px solid #ddd; 
 }
 
 .product img {
@@ -37,7 +36,7 @@ h1 {
 /* Estilos para el botón "Agregar al Carrito" */
 .add-to-cart {
     background-color: #007bff;
-    color: #fff;
+    color: #f0f0f0;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
