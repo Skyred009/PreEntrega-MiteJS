@@ -46,7 +46,7 @@ h1 {
     background-color: #0056b3;
 }
 
-/* Reset de estilos para eliminar los márgenes y rellenos predeterminados */
+
 * {
     margin: 0;
     padding: 0;
@@ -154,13 +154,13 @@ h1 {
 /* Cuerpo de la página */
 body {
     font-family: Arial, sans-serif;
-    background-color: #222; /* Cambiar el fondo de la página a gris oscuro */
-    color: #9c4b4b; /* Cambiar el color del texto a blanco */
+    background-color: #222;
+    color: #9c4b4b; 
     padding: 20px;
 }
 
 .product {
-    background-color: #ccc; /* Cambiar el fondo de color a gris */
+    background-color: #ccc;
     border: 1px solid #ddd;
     padding: 20px;
     text-align: center;
