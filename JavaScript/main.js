@@ -5,7 +5,7 @@ let products = [];
 // Función para obtener productos desde la API
 async function fetchProducts() {
     try {
-        const response = await fetch('https://fakestoreapi.com/products'); // Reemplaza 'URL_DE_TU_API' con la URL real de tu API
+        const response = await fetch('https://fakestoreapi.com/products');
         if (!response.ok) {
             throw new Error('Hubo un problema al obtener los productos.');
         }
@@ -57,17 +57,16 @@ addToCartButtons.forEach((button) => {
     });
 });
 
-// Llama a fetchProducts y actualiza la variable products cuando se obtienen los datos
+// Llama a fetchProducts 
 fetchProducts()
     .then((data) => {
-        products = data; // Actualiza la variable products con los datos de la API
-        renderProducts(); // Llama a renderProducts para mostrar los productos en la página
+        products = data; 
+        renderProducts(); //
     })
     .catch((error) => {
         console.error('Error al obtener los productos:', error);
     });
 
-    // ... (tu código actual)
 
 // Función para renderizar los productos
 function renderProducts() {
@@ -94,11 +93,11 @@ function renderProducts() {
     });
 }
 
-// Llama a fetchProducts y actualiza la variable products cuando se obtienen los datos
+
 fetchProducts()
     .then((data) => {
-        products = data; // Actualiza la variable products con los datos de la API
-        renderProducts(); // Llama a renderProducts para mostrar los productos en la página
+        products = data; 
+        renderProducts();
     })
     .catch((error) => {
         console.error('Error al obtener los productos:', error);
